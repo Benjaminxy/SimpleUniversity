@@ -29,10 +29,9 @@ public class StudentRepository {
     }
 
     public Student findStudentByNationalCode(String nationalCode){
-        for (int i = 0; i < students.length; i++) {
-            if (students[i] != null && students[i].getNationalCode().equals(nationalCode))
-            {
-                return  students[i] ;
+        for (Student student : students) {
+            if (student != null && student.getNationalCode().equals(nationalCode)) {
+                return student;
             }
 
         }

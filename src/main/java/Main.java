@@ -1,6 +1,8 @@
+import model.Course;
 import model.Student;
 import model.Teacher;
 import service.Clerk;
+import service.CourseService;
 import service.StudentService;
 import service.TeacherService;
 
@@ -22,6 +24,12 @@ public class Main {
 
             System.out.println(clerk.acceptTeachert("3080200000"));
             System.out.println(clerk.updateTeacher("3080200000" , "jadid"));
+
+
+            Course course = new Course("programming", 12345, 30);
+            Course course1 = new Course("programming1", 12346, 30);
+            CourseService courseService = new CourseService();
+            System.out.println("addCourse "+ courseService.addCourse(course));
 
         }
 }
