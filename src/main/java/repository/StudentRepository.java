@@ -5,6 +5,9 @@ import model.Student;
 public class StudentRepository {
 
     private final static Student [] students = new Student [100];
+    private int size;
+
+
 
 
     public void register (Student student){
@@ -18,6 +21,7 @@ public class StudentRepository {
         for (int i = 0; i < students.length; i++) {
             if (students[i]==null) {
                 students[i]= student;
+                size++;
                 return;
             }
 
@@ -57,7 +61,17 @@ public class StudentRepository {
         student.setFirstname(firstname);
 
     }
+    public int getNumberOfStudents() {
+        return size;
+    }
 
+    public Student[] getStudentByNumber() {
+        Student[] studentsList = new Student[size];
+        for (int i = 0; i < size; i++) {
+            studentsList[i] = students[i];
+        }
+        return studentsList;
+    }
 
 
 

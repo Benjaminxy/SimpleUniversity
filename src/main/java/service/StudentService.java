@@ -49,4 +49,10 @@ public class StudentService {
        return true;
 
     }
+
+    public Student getStudentByNumber () {
+       Student [] StudentList = studentRepository.getStudentByNumber();
+    }
+
+
 }
