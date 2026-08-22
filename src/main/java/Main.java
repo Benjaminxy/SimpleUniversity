@@ -22,14 +22,15 @@ public class Main {
             TeacherService teacherService = new TeacherService();
             System.out.println(teacherService.register(new Teacher("tkjfdlskfj", "dklfjdlkfj", "3080200000", "aA1!dslkjfd")));
 
-            System.out.println(clerk.acceptTeachert("3080200000"));
-            System.out.println(clerk.updateTeacher("3080200000" , "jadid"));
+            System.out.println("accept teacher ->  " +clerk.acceptTeachert("3080200000"));
+            System.out.println("update teacher firstname ->  "+clerk.updateTeacher("3080200000" , "jadid"));
 
 
             Course course = new Course("programming", 12345, 30);
-            Course course1 = new Course("programming1", 12346, 30);
+            Course course1 = new Course("programming", 12345, 30);
             CourseService courseService = new CourseService();
-            System.out.println("addCourse "+ courseService.addCourse(course));
+            System.out.println("addCourse ->   "+ courseService.addCourse(course));
+            System.out.println("addCourse douplicate  ->  "+ courseService.addCourse(course1));
 
         }
 }

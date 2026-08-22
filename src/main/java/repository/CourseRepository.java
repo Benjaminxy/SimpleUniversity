@@ -23,6 +23,29 @@ public void addCourse (Course course ) {
     }
 
 
-
 }
+
+    public Course findByName(String name)
+    {
+        for (int i = 0; i < courses.length; i++) {
+            if (courses[i] != null && courses [i].getName().equals(name)){
+                return courses[i];
+
+            }
+        }
+
+        return null;
+
+    }
+
+    public boolean  isDuplicateCourse (String name)
+    {
+        if (findByName(name) != null)
+        {
+            return true;
+        }
+
+        return false;
+
+    }
 }
