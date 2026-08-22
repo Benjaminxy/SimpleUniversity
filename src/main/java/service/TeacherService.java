@@ -49,4 +49,8 @@ public class TeacherService {
         return true;
 
     }
+
+    public Teacher [] getTeacher () {
+        return teacherRepository.getTeacherByNumber();
+    }
 }

@@ -2,6 +2,7 @@ package service;
 
 
 import model.Student;
+import model.Teacher;
 
 public class Clerk {
     TeacherService teacherService = new TeacherService();
@@ -28,7 +29,11 @@ public class Clerk {
 
     }
     public Student[] getAllStudent() {
-        return studentService.getAll();
+        return studentService.getStudentListr();
+    }
+
+    public Teacher[] getAllTeacher() {
+        return teacherService.getTeacher();
     }
 
 

@@ -13,14 +13,14 @@ public class Main {
             Clerk clerk = new Clerk();
             String password = "aA1!slkdjf";
             Student student
-                    = new Student("Farzad", "afshar", "3080000000", password);
+                    = new Student("Benjamin", "kasz", "3080000000", password);
             System.out.println(studentService.register(student));
             System.out.println(clerk.acceptStudent("3080000000"));
-            System.out.println(clerk.updateStudent("3080000000" , "jadid"));
+            System.out.println(clerk.updateStudent("3080000000" , "ajab"));
 
 
             TeacherService teacherService = new TeacherService();
-            System.out.println(teacherService.register(new Teacher("tkjfdlskfj", "dklfjdlkfj", "3080200000", "aA1!dslkjfd")));
+            System.out.println(teacherService.register(new Teacher("farzad", "afshar", "3080200000", "aA1!dslkjfd")));
 
             System.out.println("accept teacher ->  " +clerk.acceptTeachert("3080200000"));
             System.out.println("update teacher firstname ->  "+clerk.updateTeacher("3080200000" , "jadid"));
@@ -31,6 +31,20 @@ public class Main {
             CourseService courseService = new CourseService();
             System.out.println("addCourse ->   "+ courseService.addCourse(course));
             System.out.println("addCourse douplicate  ->  "+ courseService.addCourse(course1));
+
+            Student [] list = clerk.getAllStudent();
+            for (int i = 0; i < list.length; i++) {
+                System.out.println(list[i]);
+
+            }
+
+            Teacher [] teacherList = clerk.getAllTeacher();
+
+            for (Teacher tList : teacherList)
+            {
+                System.out.println(tList);
+            }
+
 
         }
 }

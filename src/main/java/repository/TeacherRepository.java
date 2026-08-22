@@ -5,7 +5,7 @@ import model.Teacher;
 public class TeacherRepository {
 
     private final static Teacher [] teachers = new Teacher [100];
-
+    private static int size;
 
     public void register (Teacher teacher){
 
@@ -18,6 +18,7 @@ public class TeacherRepository {
         for (int i = 0; i < teachers.length; i++) {
             if (teachers[i]==null) {
                 teachers[i]= teacher;
+                size++;
                 return;
             }
 
@@ -58,6 +59,16 @@ public class TeacherRepository {
         teacher.setFirstname(firstname);
 
     }
+
+    public Teacher[] getTeacherByNumber() {
+        Teacher[] teachersList = new Teacher[size];
+        for (int i = 0; i < size; i++) {
+            teachersList[i] = teachers[i];
+        }
+        return teachersList;
+    }
+
+
 
 
 

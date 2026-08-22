@@ -50,8 +50,8 @@ public class StudentService {
 
     }
 
-    public Student getStudentByNumber () {
-       Student [] StudentList = studentRepository.getStudentByNumber();
+    public Student [] getStudentListr () {
+       return studentRepository.getStudentByNumber();
     }
 
 

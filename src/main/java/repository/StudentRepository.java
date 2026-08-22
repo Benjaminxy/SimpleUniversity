@@ -5,7 +5,7 @@ import model.Student;
 public class StudentRepository {
 
     private final static Student [] students = new Student [100];
-    private int size;
+    private static int size;
 
 
 
