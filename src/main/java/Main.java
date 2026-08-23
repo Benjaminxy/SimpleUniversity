@@ -14,7 +14,10 @@ public class Main {
             String password = "aA1!slkdjf";
             Student student
                     = new Student("Benjamin", "kasz", "3080000000", password);
+            Student student2
+                    = new Student("benj", "roz", "3080000001", password);
             System.out.println(studentService.register(student));
+            System.out.println(studentService.register(student2));
             System.out.println(clerk.acceptStudent("3080000000"));
             System.out.println(clerk.updateStudent("3080000000" , "ajab"));
 
@@ -27,7 +30,7 @@ public class Main {
 
 
             Course course = new Course("programming", 12345, 30);
-            Course course1 = new Course("programming", 12345, 30);
+            Course course1 = new Course("programming2", 123456, 30);
             CourseService courseService = new CourseService();
             System.out.println("addCourse ->   "+ courseService.addCourse(course));
             System.out.println("addCourse douplicate  ->  "+ courseService.addCourse(course1));
@@ -35,6 +38,7 @@ public class Main {
             Student [] list = clerk.getAllStudent();
             for (int i = 0; i < list.length; i++) {
                 System.out.println(list[i]);
+                System.out.println(i);
 
             }
 
