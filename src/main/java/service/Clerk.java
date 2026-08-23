@@ -12,7 +12,7 @@ public class Clerk {
 
     }
 
-    public boolean acceptTeachert(String nationalCode) {
+    public boolean acceptTeacher(String nationalCode) {
         return  teacherService.acceptTeacher(nationalCode);
 
     }
@@ -28,12 +28,12 @@ public class Clerk {
 
 
     }
-    public Student[] getAllStudent() {
-        return studentService.getStudentListr();
+    public Student[] getAllStudents() {
+        return studentService.getAllStudents();
     }
 
-    public Teacher[] getAllTeacher() {
-        return teacherService.getTeacher();
+    public Teacher[] getAllTeachers() {
+        return teacherService.getAllTeachers();
     }
 
 

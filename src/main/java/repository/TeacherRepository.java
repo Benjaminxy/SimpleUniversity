@@ -60,7 +60,7 @@ public class TeacherRepository {
 
     }
 
-    public Teacher[] getTeacherByNumber() {
+    public Teacher[] getAllTeachers() {
         Teacher[] teachersList = new Teacher[size];
         for (int i = 0; i < size; i++) {
             teachersList[i] = teachers[i];

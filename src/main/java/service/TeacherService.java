@@ -50,7 +50,7 @@ public class TeacherService {
 
     }
 
-    public Teacher [] getTeacher () {
-        return teacherRepository.getTeacherByNumber();
+    public Teacher [] getAllTeachers () {
+        return teacherRepository.getAllTeachers();
     }
 }

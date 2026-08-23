@@ -65,7 +65,7 @@ public class StudentRepository {
         return size;
     }
 
-    public Student[] getStudentByNumber() {
+    public Student[] getAllStudents() {
         Student[] studentsList = new Student[size];
         for (int i = 0; i < size; i++) {
             studentsList[i] = students[i];

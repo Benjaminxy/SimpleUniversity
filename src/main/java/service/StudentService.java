@@ -50,8 +50,8 @@ public class StudentService {
 
     }
 
-    public Student [] getStudentListr () {
-       return studentRepository.getStudentByNumber();
+    public Student [] getAllStudents () {
+       return studentRepository.getAllStudents();
     }
 
 

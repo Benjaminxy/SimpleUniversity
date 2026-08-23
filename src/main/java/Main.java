@@ -2,6 +2,7 @@ import model.Course;
 import model.Student;
 import model.StudentCourse;
 import model.Teacher;
+import repository.StudentCourseRepository;
 import service.*;
 
 public class Main {
@@ -23,7 +24,7 @@ public class Main {
             TeacherService teacherService = new TeacherService();
             System.out.println(teacherService.register(new Teacher("farzad", "afshar", "3080200000", "aA1!dslkjfd")));
 
-            System.out.println("accept teacher ->  " +clerk.acceptTeachert("3080200000"));
+            System.out.println("accept teacher ->  " +clerk.acceptTeacher("3080200000"));
             System.out.println("update teacher firstname ->  "+clerk.updateTeacher("3080200000" , "jadid"));
 
 
@@ -33,14 +34,14 @@ public class Main {
             System.out.println("addCourse ->   "+ courseService.addCourse(course));
             System.out.println("addCourse douplicate  ->  "+ courseService.addCourse(course1));
 
-            Student [] list = clerk.getAllStudent();
-            for (int i = 0; i < list.length; i++) {
-                System.out.println(list[i]);
+            Student [] studentList = clerk.getAllStudents();
+            for (int i = 0; i < studentList.length; i++) {
+                System.out.println(studentList[i]);
                 System.out.println(i);
 
             }
 
-            Teacher [] teacherList = clerk.getAllTeacher();
+            Teacher [] teacherList = clerk.getAllTeachers();
 
             for (Teacher tList : teacherList)
             {
@@ -51,7 +52,8 @@ public class Main {
             StudentCourseService studentCourseService = new StudentCourseService();
 
             System.out.println("return of register course:");
-            System.out.println(studentCourseService.addStudentCourse(new StudentCourse("3080000000", 12345)));
+            StudentCourse course3 = new StudentCourse("3080000000", 12345);
+            System.out.println(studentCourseService.addStudentCourse(course3));
             System.out.println(studentCourseService.addStudentCourse(new StudentCourse("3080000000", 12346)));
 
 

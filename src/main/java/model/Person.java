@@ -58,10 +58,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Person{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", username='" + nationalCode + '\'' +
+                ", nationalCode='" + nationalCode + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }

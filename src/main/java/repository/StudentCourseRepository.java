@@ -4,7 +4,7 @@ import model.StudentCourse;
 
 public class StudentCourseRepository {
 
-    private static final StudentCourse [] studentCourseRepository = new StudentCourse[100];
+    private static final StudentCourse [] studentCourses = new StudentCourse[100];
     private  static int size;
     public void add ( StudentCourse studentCourse) {
 
@@ -12,9 +12,9 @@ public class StudentCourseRepository {
         {
             throw new IllegalArgumentException("the student course is null");
         }
-        for (int i = 0; i < studentCourseRepository.length; i++) {
-            if (studentCourseRepository [i] == null) {
-                studentCourse = studentCourseRepository [i];
+        for (int i = 0; i < studentCourses.length; i++) {
+            if (studentCourses [i] == null) {
+                studentCourse = studentCourses [i];
                 size++;
                 return;
             }
@@ -24,9 +24,9 @@ public class StudentCourseRepository {
     }
     public int getNumberOfRegisterStudentCourse(int code){
         int count = 0;
-        for (int i = 0; i < studentCourseRepository.length; i++) {
+        for (int i = 0; i < studentCourses.length; i++) {
 
-            if( studentCourseRepository [i]!= null && studentCourseRepository[i].getCourseCode() == code)
+            if( studentCourses [i]!= null && studentCourses[i].getCourseCode() == code)
             {
                 ++count;
             }
