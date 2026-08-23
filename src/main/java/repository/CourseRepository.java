@@ -48,4 +48,28 @@ public void addCourse (Course course ) {
         return false;
 
     }
+
+    public int getCapacityByCode (int code)
+    {
+        for (int i = 0; i < courses.length; i++) {
+            if (courses [i] != null && courses [i].getCode()==code)
+            {
+                return courses[i].getCapacity();
+            }
+
+        }
+        return 0;
+    }
+
+    public String getNameByCode (String name)
+    {
+        for (int i = 0; i < courses.length; i++) {
+            if (courses [i] != null && courses [i].getName()==name)
+            {
+                return courses[i].getName();
+            }
+
+        }
+        return null;
+    }
 }

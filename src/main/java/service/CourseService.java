@@ -16,4 +16,9 @@ public class CourseService {
         return true;
 
     }
+
+    public int getCapacityByCode(int code){
+
+        return courseRepository.getCapacityByCode(code);
+    }
 }

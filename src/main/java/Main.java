@@ -1,10 +1,8 @@
 import model.Course;
 import model.Student;
+import model.StudentCourse;
 import model.Teacher;
-import service.Clerk;
-import service.CourseService;
-import service.StudentService;
-import service.TeacherService;
+import service.*;
 
 public class Main {
 
@@ -48,6 +46,14 @@ public class Main {
             {
                 System.out.println(tList);
             }
+
+
+            StudentCourseService studentCourseService = new StudentCourseService();
+
+            System.out.println("return of register course:");
+            System.out.println(studentCourseService.addStudentCourse(new StudentCourse("3080000000", 12345)));
+            System.out.println(studentCourseService.addStudentCourse(new StudentCourse("3080000000", 12346)));
+
 
 
         }
