@@ -63,4 +63,28 @@ public class StudentCourseRepository {
 
         return courseCodes;
     }
+
+
+    public StudentCourse findStudentCourse (String nationalCode , int courseCode)
+    {
+        for (int i = 0; i < studentCourses.length; i++) {
+            if (studentCourses[i] != null && studentCourses[i].getCourseCode()==courseCode && studentCourses[i].getNationalCode().equals(nationalCode))
+            {
+                return studentCourses[i];
+
+            }
+
+        }
+
+         return null;
+    }
+
+    public void setGradeWithNationalCodeAndCourseCode(StudentCourse courseCode, int grade) {
+
+        if (courseCode != null) {
+            courseCode.setGrade(grade);
+        }
+    }
+
+
 }

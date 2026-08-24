@@ -32,4 +32,19 @@ CourseRepository courseRepository = new CourseRepository();
 
     }
 
+    public boolean setGrade (String nationalCode , int courseCode , int grade)
+    {
+        StudentCourse  stCourse = studentCourseRepository.findStudentCourse( nationalCode ,  courseCode);
+        if (stCourse != null ) {
+
+            studentCourseRepository.setGradeWithNationalCodeAndCourseCode(stCourse , grade);
+
+            return true ;
+
+
+        }
+
+        return false ;
+    }
+
 }

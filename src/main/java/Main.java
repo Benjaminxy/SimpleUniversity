@@ -64,6 +64,7 @@ public class Main {
                 System.out.println(registeredCourseNames[i]);
             }
 
+            System.out.println(studentCourseService.setGrade("3080000000", 12345, 20));
 
 
         }
