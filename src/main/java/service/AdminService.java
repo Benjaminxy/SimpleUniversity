@@ -4,7 +4,7 @@ package service;
 import model.Student;
 import model.Teacher;
 
-public class Clerk {
+public class AdminService {
     TeacherService teacherService = new TeacherService();
     StudentService studentService = new StudentService();
     public boolean acceptStudent(String nationalCode) {

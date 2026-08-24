@@ -9,7 +9,7 @@ public class Main {
 
         public static void main(String[] args) {
             StudentService studentService = new StudentService();
-            Clerk clerk = new Clerk();
+            AdminService adminService = new AdminService();
             String password = "aA1!slkdjf";
             Student student
                     = new Student("Benjamin", "kasz", "3080000000", password);
@@ -17,15 +17,15 @@ public class Main {
                     = new Student("benj", "roz", "3080000001", password);
             System.out.println("register student1 ->  " + studentService.register(student));
             System.out.println("register student2 ->  " + studentService.register(student2));
-            System.out.println("accept student ->  " + clerk.acceptStudent("3080000000"));
-            System.out.println("update student firstname ->  " + clerk.updateStudent("3080000000" , "ajab"));
+            System.out.println("accept student ->  " + adminService.acceptStudent("3080000000"));
+            System.out.println("update student firstname ->  " + adminService.updateStudent("3080000000" , "ajab"));
 
 
             TeacherService teacherService = new TeacherService();
             System.out.println("register teacher ->  " + teacherService.register(new Teacher("farzad", "afshar", "3080200000", "aA1!dslkjfd")));
 
-            System.out.println("accept teacher ->  " +clerk.acceptTeacher("3080200000"));
-            System.out.println("update teacher firstname ->  "+clerk.updateTeacher("3080200000" , "jadid"));
+            System.out.println("accept teacher ->  " +adminService.acceptTeacher("3080200000"));
+            System.out.println("update teacher firstname ->  "+adminService.updateTeacher("3080200000" , "jadid"));
 
 
             Course course = new Course("programming", 12345, 30);
@@ -35,14 +35,14 @@ public class Main {
             System.out.println("addCourse douplicate  ->  "+ courseService.addCourse(course1));
 
             System.out.println("all students:");
-            Student [] studentList = clerk.getAllStudents();
+            Student [] studentList = adminService.getAllStudents();
             for (int i = 0; i < studentList.length; i++) {
                 System.out.println("student " + i + " ->  " + studentList[i]);
 
             }
 
             System.out.println("all teachers:");
-            Teacher [] teacherList = clerk.getAllTeachers();
+            Teacher [] teacherList = adminService.getAllTeachers();
 
             for (Teacher tList : teacherList)
             {
