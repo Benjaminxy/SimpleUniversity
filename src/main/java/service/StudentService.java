@@ -1,6 +1,7 @@
 package service;
 
 import model.Student;
+import repository.StudentCourseRepository;
 import repository.StudentRepository;
 import utility.Validator;
 
@@ -10,6 +11,7 @@ public class StudentService {
     private final StudentRepository studentRepository = new StudentRepository();
     private final Validator validator = new Validator();
     private final StudentCourseService studentCourseService = new StudentCourseService();
+    private final StudentCourseRepository studentCourseRepository = new StudentCourseRepository();
     private final CourseService courseService = new CourseService();
 
     public boolean register(Student student) {
@@ -58,6 +60,17 @@ public class StudentService {
         return courseService.getCourseNamesByCodes(courseCodes);
 
 
+    }
+
+    public  boolean removeStudent (String nationalCode , String firstname) {
+        Student student = studentRepository.findStudentByNationalCode(nationalCode);
+        if (student==null) {
+            return false;
+        }
+        studentRepository.removeStudent(nationalCode);
+        studentCourseRepository.removeStudentCourse(nationalCode);
+
+        return true;
     }
 
 

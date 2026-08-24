@@ -66,6 +66,12 @@ public class Main {
 
             System.out.println(studentCourseService.setGrade("3080000000", 12345, 20));
 
+            System.out.println(studentService.removeStudent("3080000000", "ajab"));
+
+            String[] registeredCourseNamess = studentService.getRegisteredCourseNames("3080000000");
+            for (int i = 0; i < registeredCourseNamess.length; i++) {
+                System.out.println(registeredCourseNamess[i]);
+            }
 
         }
 }

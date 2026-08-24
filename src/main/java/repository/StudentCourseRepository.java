@@ -101,4 +101,22 @@ public class StudentCourseRepository {
     }
 
 
+    public void removeStudentCourse(String nationalCode) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (studentCourses[i] != null && studentCourses[i].getNationalCode().equals(nationalCode)) {
+
+                for (int j = i; j < size - 1; j++) {
+                    studentCourses[j] = studentCourses[j + 1];
+                }
+
+                studentCourses[size - 1] = null;
+                size--;
+
+            }
+        }
+
+
+    }
+
+
 }

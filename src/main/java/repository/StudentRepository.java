@@ -73,6 +73,23 @@ public class StudentRepository {
         return studentsList;
     }
 
+    public void removeStudent(String nationalCode) {
+        for (int i = 0; i < size; i++) {
+            if (students[i] != null && students[i].getNationalCode().equals(nationalCode)) {
+
+                for (int j = i; j < size - 1; j++) {
+                    students[j] = students[j + 1];
+                }
+
+                students[size - 1] = null;
+                size--;
+
+            }
+        }
+
+
+    }
+
 
 
 }
