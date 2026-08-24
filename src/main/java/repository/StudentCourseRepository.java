@@ -6,6 +6,8 @@ public class StudentCourseRepository {
 
     private static final StudentCourse [] studentCourses = new StudentCourse[100];
     private  static int size;
+
+
     public void add ( StudentCourse studentCourse) {
 
         if (studentCourse==null)
@@ -22,17 +24,21 @@ public class StudentCourseRepository {
         }
 
     }
-    public int getNumberOfRegisterStudentCourse(int code){
+
+
+    public int countStudentsInCourse(int courseCode){
         int count = 0;
         for (int i = 0; i < studentCourses.length; i++) {
 
-            if( studentCourses [i]!= null && studentCourses[i].getCourseCode() == code)
+            if( studentCourses [i]!= null && studentCourses[i].getCourseCode() == courseCode)
             {
                 ++count;
             }
         }
         return count;
     }
+
+
 
 
     public int countCoursesForStudent (String nationalCode) {
@@ -47,6 +53,9 @@ public class StudentCourseRepository {
         }
         return count ;
     }
+
+
+
 
     public  int [] getCourseCodesForStudent(String nationalCode, int count) {
         int [] courseCodes = new int [count];
@@ -65,6 +74,8 @@ public class StudentCourseRepository {
     }
 
 
+
+
     public StudentCourse findStudentCourse (String nationalCode , int courseCode)
     {
         for (int i = 0; i < studentCourses.length; i++) {
@@ -79,10 +90,13 @@ public class StudentCourseRepository {
          return null;
     }
 
-    public void setGradeWithNationalCodeAndCourseCode(StudentCourse courseCode, int grade) {
 
-        if (courseCode != null) {
-            courseCode.setGrade(grade);
+
+
+    public void setGrade(StudentCourse studentCourse, int grade) {
+
+        if (studentCourse != null) {
+            studentCourse.setGrade(grade);
         }
     }
 

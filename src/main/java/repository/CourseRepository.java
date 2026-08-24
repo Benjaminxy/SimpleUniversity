@@ -38,6 +38,16 @@ public void addCourse (Course course ) {
 
     }
 
+    public Course findByCode(int code)
+    {
+        for (int i = 0; i < courses.length; i++) {
+            if (courses[i] != null && courses[i].getCode() == code) {
+                return courses[i];
+            }
+        }
+        return null;
+    }
+
     public boolean  isDuplicateCourse (String name)
     {
         if (findByName(name) != null)

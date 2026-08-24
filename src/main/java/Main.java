@@ -44,17 +44,17 @@ public class Main {
             System.out.println("all teachers:");
             Teacher [] teacherList = adminService.getAllTeachers();
 
-            for (Teacher tList : teacherList)
+            for (Teacher teacher : teacherList)
             {
-                System.out.println(tList);
+                System.out.println(teacher);
             }
 
 
             StudentCourseService studentCourseService = new StudentCourseService();
 
             System.out.println("register course:");
-            StudentCourse course3 = new StudentCourse("3080000000", 12345);
-            System.out.println("register course1 ->  " + studentCourseService.addStudentCourse(course3));
+            StudentCourse studentCourse1 = new StudentCourse("3080000000", 12345);
+            System.out.println("register course1 ->  " + studentCourseService.addStudentCourse(studentCourse1));
             System.out.println("register course2 ->  " + studentCourseService.addStudentCourse(new StudentCourse("3080000000", 12346)));
 
 

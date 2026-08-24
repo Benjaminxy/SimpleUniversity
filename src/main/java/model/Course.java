@@ -12,10 +12,13 @@ public class Course {
         this.capacity = capacity;
     }
 
+
     public String getName () {
 
        return  name;
     }
+
+
 
     public int getCode () {
 
