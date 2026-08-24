@@ -14,7 +14,7 @@ public class StudentCourseRepository {
         }
         for (int i = 0; i < studentCourses.length; i++) {
             if (studentCourses [i] == null) {
-                studentCourse = studentCourses [i];
+                studentCourses [i] = studentCourse;
                 size++;
                 return;
             }
@@ -32,5 +32,35 @@ public class StudentCourseRepository {
             }
         }
         return count;
+    }
+
+
+    public int countCoursesForStudent (String nationalCode) {
+        int count = 0 ;
+        for (int i = 0; i < studentCourses.length; i++) {
+
+            if (studentCourses[i] != null && studentCourses[i].getNationalCode().equals(nationalCode) )
+            {
+                ++count;
+            }
+
+        }
+        return count ;
+    }
+
+    public  int [] getCourseCodesForStudent(String nationalCode, int count) {
+        int [] courseCodes = new int [count];
+        int j= 0;
+
+        for (int i = 0; i < studentCourses.length; i++) {
+            if (studentCourses [i] != null && studentCourses[i].getNationalCode().equals(nationalCode))
+            {
+               courseCodes [j]= studentCourses[i].getCourseCode();
+                j++;
+            }
+
+        }
+
+        return courseCodes;
     }
 }

@@ -72,4 +72,18 @@ public void addCourse (Course course ) {
         }
         return null;
     }
+
+    public String getCourseNameByCode(int code )
+    {
+        for (int i = 0; i < courses.length; i++) {
+            if (courses[i]!=null && courses[i].getCode()==code)
+            {
+                return courses[i].getName();
+            }
+
+        }
+        return null ;
+
+
+    }
 }

@@ -26,4 +26,10 @@ CourseRepository courseRepository = new CourseRepository();
         return true;
     }
 
+    public int [] getCourseCodesForStudent (String nationalCode) {
+        int courseCount = studentCourseRepository.countCoursesForStudent(nationalCode);
+       return  studentCourseRepository.getCourseCodesForStudent(nationalCode , courseCount);
+
+    }
+
 }
